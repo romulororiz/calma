@@ -1,0 +1,69 @@
+Category,Feature,Status,Priority,Complexity,Design Ready,Description,Dependencies,User Value
+Core Foundation,User Authentication,To Do,Critical,Medium,No,OAuth and email/password login system,Backend API,Access to personalized features
+Core Foundation,User Profile Setup,To Do,Critical,Low,No,Basic user info and ADHD preferences,Authentication,Personalized experience setup
+Core Foundation,Onboarding Flow,To Do,High,Medium,Partial,Welcome tutorial and app introduction,Authentication,User retention and understanding
+
+Breathing & Mindfulness,Breathing Guide Interface,Designed,High,Medium,Yes,Circular breathing exercise with timer and visual guidance,Core Foundation,Immediate stress relief and focus
+Breathing & Mindfulness,Breathing Exercise Library,To Do,Medium,Medium,No,Multiple breathing techniques (4-7-8, box breathing, etc.),Breathing Guide,Variety for different needs
+Breathing & Mindfulness,Custom Breathing Patterns,To Do,Low,Medium,No,User-defined breathing rhythms,Breathing Library,Personalized mindfulness practice
+Breathing & Mindfulness,Breathing Reminders,To Do,Medium,Low,No,Smart notifications for breathing breaks,Notifications System,Proactive stress management
+
+Mood & Check-ins,Daily Check-in Flow,Designed,Critical,Medium,Yes,Emoji-based mood tracking with context selection,Core Foundation,Core emotional awareness feature
+Mood & Check-ins,Context Tracking,Designed,High,Low,Yes,Track mood by situation (work, home, social, etc.),Daily Check-ins,Understanding mood triggers
+Mood & Check-ins,Quick Mood Log,To Do,Medium,Low,Partial,Fast mood entry without full check-in,Daily Check-ins,Low-friction mood tracking
+Mood & Check-ins,Mood Notes,To Do,Medium,Low,No,Optional text notes with mood entries,Daily Check-ins,Detailed emotional journaling
+Mood & Check-ins,Photo Mood Diary,To Do,Low,Medium,No,Attach photos to mood entries,Daily Check-ins,Visual memory association
+
+Dashboard & Navigation,Personalized Dashboard,Designed,Critical,High,Yes,Main interface with greeting and current status,Core Foundation,Central hub for all features
+Dashboard & Navigation,Mood Streak Tracking,Designed,Medium,Low,Yes,Visual representation of daily check-in consistency,Daily Check-ins,Motivation and habit building
+Dashboard & Navigation,Quick Actions,Designed,High,Medium,Yes,Fast access to breathing, check-in, and support,All Core Features,Immediate access to help
+Dashboard & Navigation,Today's Summary,To Do,Medium,Medium,No,Daily overview of mood, activities, and insights,Multiple Features,Daily awareness and planning
+Dashboard & Navigation,Weather-Based Suggestions,To Do,Low,Medium,No,Mood tips based on weather conditions,External API,Environmental awareness
+
+Patterns & Insights,Weekly Mood Patterns,Designed,High,Medium,Yes,Visual calendar showing mood trends over time,Mood Tracking,Pattern recognition for self-awareness
+Patterns & Insights,Monthly Insights,To Do,Medium,Medium,Partial,Deeper analysis of mood patterns and triggers,Weekly Patterns,Long-term trend understanding
+Patterns & Insights,AI-Powered Suggestions,To Do,High,High,No,Personalized recommendations based on patterns,AI Integration,Actionable insights for improvement
+Patterns & Insights,Correlation Analysis,To Do,Medium,High,No,Connect mood with activities, weather, sleep, etc.,Multiple Data Sources,Understanding personal triggers
+Patterns & Insights,Progress Celebrations,To Do,Medium,Low,No,Highlight positive trends and improvements,Pattern Analysis,Motivation and positive reinforcement
+
+Support & Crisis,Support Mode Interface,Designed,Critical,Medium,Yes,Calm crisis support with breathing and contact options,Core Foundation,Immediate crisis intervention
+Support & Crisis,Emergency Contacts,Designed,High,Low,Yes,Quick access to trusted contacts and hotlines,Support Mode,Crisis communication
+Support & Crisis,Breathing for Crisis,Designed,High,Low,Yes,Specialized breathing exercises for anxiety/panic,Breathing Guide,Crisis self-regulation
+Support & Crisis,Safety Planning,To Do,High,Medium,No,Personalized crisis response plan,Support Mode,Proactive crisis management
+Support & Crisis,Professional Resources,To Do,Medium,Low,No,Directory of ADHD-friendly therapists and resources,Location Services,Professional support access
+
+Visual Diary,Calendar Mood View,Designed,Medium,Medium,Yes,Monthly calendar showing daily mood entries,Mood Tracking,Visual pattern recognition
+Visual Diary,Mood Statistics,To Do,Low,Medium,Partial,Charts and graphs of mood data,Calendar View,Data-driven insights
+Visual Diary,Export Mood Data,To Do,Low,Low,No,Download mood history for external use,Mood Tracking,Data portability and sharing
+Visual Diary,Mood Sharing,To Do,Low,Medium,No,Share mood trends with therapists or family,Export Feature,Treatment collaboration
+
+Task & Productivity,Simple Task List,To Do,High,Medium,No,ADHD-friendly task management with visual cues,Core Foundation,Daily productivity support
+Task & Productivity,Task Mood Correlation,To Do,Medium,High,No,Track how tasks affect mood and energy,Task List + Mood,Understanding productivity patterns
+Task & Productivity,Focus Timer,To Do,Medium,Medium,No,Pomodoro-style timer with ADHD adaptations,Task Management,Focus and time management
+Task & Productivity,Task Energy Matching,To Do,Low,High,No,Suggest tasks based on current energy level,AI + Mood Data,Optimized productivity
+
+Notifications & Reminders,Smart Reminders,To Do,High,Medium,No,Context-aware notifications for check-ins and breathing,Core Features,Consistent habit building
+Notifications & Reminders,Gentle Notifications,To Do,Medium,Low,No,ADHD-friendly notification style and timing,Smart Reminders,Non-overwhelming reminders
+Notifications & Reminders,Achievement Notifications,To Do,Low,Low,No,Celebrate streaks and positive patterns,Pattern Recognition,Positive reinforcement
+
+Wearable Integration,Apple Health Sync,To Do,Medium,High,No,Import health data for holistic insights,External API,Comprehensive health picture
+Wearable Integration,Google Fit Sync,To Do,Medium,High,No,Android health data integration,External API,Cross-platform health data
+Wearable Integration,Sleep Pattern Analysis,To Do,Low,Medium,No,Correlate sleep with mood and focus,Wearable Data,Sleep-mood awareness
+Wearable Integration,Activity-Mood Correlation,To Do,Low,High,No,Connect physical activity with emotional state,Wearable + Mood Data,Holistic wellness insights
+
+Accessibility & Inclusivity,Voice Commands,To Do,Medium,High,No,Voice control for hands-free interaction,Core Features,Motor accessibility
+Accessibility & Inclusivity,High Contrast Mode,To Do,Low,Low,No,Enhanced visual accessibility,UI System,Visual accessibility
+Accessibility & Inclusivity,Font Size Controls,To Do,Low,Low,No,Adjustable text size for readability,UI System,Reading accessibility
+Accessibility & Inclusivity,Screen Reader Support,To Do,Medium,Medium,No,Full compatibility with assistive technologies,All Features,Comprehensive accessibility
+
+Gamification & Motivation,Mood Streaks,To Do,Medium,Low,No,Track consecutive days of check-ins,Mood Tracking,Habit reinforcement
+Gamification & Motivation,Achievement Badges,To Do,Low,Medium,No,Unlock badges for consistent app usage,Multiple Features,Long-term engagement
+Gamification & Motivation,Personal Growth Metrics,To Do,Low,Medium,No,Track improvement in mood stability and awareness,Pattern Analysis,Self-improvement visualization
+
+Social & Community,Anonymous Community,To Do,Low,High,No,Safe space to share experiences with other ADHD users,Moderation System,Peer support and validation
+Social & Community,Therapist Dashboard,To Do,Low,High,No,Professional interface for tracking patient progress,User Consent + Security,Treatment collaboration
+Social & Community,Family Sharing,To Do,Low,Medium,No,Share selected insights with trusted family members,Privacy Controls,Family support system
+
+Advanced Features,AI Mood Prediction,To Do,Low,Very High,No,Predict mood patterns and suggest preventive actions,Machine Learning,Proactive mental health
+Advanced Features,Chatbot Companion,To Do,Low,High,No,AI conversation partner for daily check-ins,NLP + AI,Interactive support
+Advanced Features,Biometric Integration,To Do,Low,Very High,No,Heart rate and stress monitoring integration,Advanced Wearables,Real-time stress detection 
