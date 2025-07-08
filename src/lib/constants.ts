@@ -28,6 +28,22 @@ export const footerLinks = [
     ],
   },
   {
+    title: 'Legal',
+    links: [
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Support', href: '/support' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { name: 'About', href: '/about' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Careers', href: '/careers' },
+    ],
+  },
+  {
     title: 'Company',
     links: [
       { name: 'About', href: '/about' },
