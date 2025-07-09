@@ -3,12 +3,14 @@
 interface CalmaLogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl'
   showText?: boolean
+  animated?: boolean
   className?: string
 }
 
 export default function CalmaLogo({
   size = 'md',
   showText = true,
+  animated = true,
   className = '',
 }: CalmaLogoProps) {
   const sizeClasses = {
@@ -19,8 +21,8 @@ export default function CalmaLogo({
     },
     md: {
       container: 'w-16 h-16',
-      text: 'text-2xl',
-      viewBox: 80,
+      text: 'text-3xl',
+      viewBox: 100,
     },
     lg: {
       container: 'w-24 h-24',
@@ -37,7 +39,7 @@ export default function CalmaLogo({
   const currentSize = sizeClasses[size]
 
   return (
-    <div className={`flex flex-col items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-2 ${className}`}>
       {/* Breathing Circles Logo */}
       <div
         className={`relative ${currentSize.container} flex items-center justify-center`}
@@ -49,125 +51,175 @@ export default function CalmaLogo({
           {/* Define gradients and filters */}
           <defs>
             {/* Glow filter */}
-            <filter id={`glow-${size}`}>
+            <filter id="glow">
               <feGaussianBlur stdDeviation="3" result="coloredBlur" />
               <feMerge>
                 <feMergeNode in="coloredBlur" />
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
-
-            {/* Background radial gradient - purple only */}
-            <radialGradient id={`background-glow-${size}`}>
-              <stop offset="0%" stopColor="#7D6BFF" stopOpacity="0.15" />
-              <stop offset="50%" stopColor="#8E72D1" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#121926" stopOpacity="0" />
+            {/* Calm gradient */}
+            <radialGradient id="calm-gradient">
+              <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
+              <stop offset="70%" stopColor="#a78bfa" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.1" />
             </radialGradient>
-
-            {/* Purple gradient variations */}
+            Purple gradient variations
             <linearGradient
-              id={`purple-gradient-1-${size}`}
+              id="purple-gradient-1"
               x1="0%"
               y1="0%"
               x2="100%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#7D6BFF" />
-              <stop offset="100%" stopColor="#8E72D1" />
+              <stop offset="0%" stopColor="#a78bfa" />
+              <stop offset="100%" stopColor="#8b5cf6" />
             </linearGradient>
             <linearGradient
-              id={`purple-gradient-2-${size}`}
+              id="purple-gradient-2"
               x1="100%"
               y1="0%"
               x2="0%"
               y2="100%"
             >
-              <stop offset="0%" stopColor="#8E72D1" />
-              <stop offset="100%" stopColor="#A855F7" />
+              <stop offset="0%" stopColor="#8b5cf6" />
+              <stop offset="100%" stopColor="#a78bfa" />
             </linearGradient>
             <linearGradient
-              id={`purple-gradient-3-${size}`}
+              id="purple-gradient-3"
               x1="0%"
               y1="100%"
               x2="100%"
               y2="0%"
             >
-              <stop offset="0%" stopColor="#A855F7" />
-              <stop offset="100%" stopColor="#7D6BFF" />
+              <stop offset="0%" stopColor="#a78bfa" />
+              <stop offset="100%" stopColor="#8b5cf6" />
             </linearGradient>
           </defs>
 
-          {/* Background glow */}
-          <circle
-            cx={currentSize.viewBox / 2}
-            cy={currentSize.viewBox / 2}
-            r={currentSize.viewBox * 0.48}
-            fill={`url(#background-glow-${size})`}
-            opacity="0.4"
-          />
+          {animated && (
+            <>
+              {/* Background glow */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.48}
+                fill="url(#background-glow)"
+                opacity="0.4"
+              />
 
-          {/* Ripple Circle 1 - Outermost */}
-          <circle
-            className="calma-ripple-circle"
-            cx={currentSize.viewBox / 2}
-            cy={currentSize.viewBox / 2}
-            r={currentSize.viewBox * 0.05}
-            fill="none"
-            stroke={`url(#purple-gradient-1-${size})`}
-            strokeWidth="1.5"
-            opacity="0"
-          />
+              {/* Ripple Circle 1 - Outermost */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.1}
+                fill="none"
+                stroke="url(#purple-gradient-1)"
+                strokeWidth="1.5"
+                opacity="0"
+                style={{
+                  animation: 'calmaRipple 6s ease-out infinite',
+                  animationDelay: '0s',
+                }}
+              />
 
-          {/* Ripple Circle 2 */}
-          <circle
-            className="calma-ripple-circle"
-            cx={currentSize.viewBox / 2}
-            cy={currentSize.viewBox / 2}
-            r={currentSize.viewBox * 0.05}
-            fill="none"
-            stroke={`url(#purple-gradient-2-${size})`}
-            strokeWidth="1.5"
-            opacity="0"
-          />
+              {/* Ripple Circle 2 */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.1}
+                fill="none"
+                stroke="url(#purple-gradient-2)"
+                strokeWidth="1.5"
+                opacity="0"
+                style={{
+                  animation: 'calmaRipple 6s ease-out infinite',
+                  animationDelay: '1.5s',
+                }}
+              />
 
-          {/* Ripple Circle 3 */}
-          <circle
-            className="calma-ripple-circle"
-            cx={currentSize.viewBox / 2}
-            cy={currentSize.viewBox / 2}
-            r={currentSize.viewBox * 0.05}
-            fill="none"
-            stroke={`url(#purple-gradient-3-${size})`}
-            strokeWidth="1.5"
-            opacity="0"
-          />
+              {/* Ripple Circle 3 */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.1}
+                fill="none"
+                stroke="url(#purple-gradient-3)"
+                strokeWidth="1.5"
+                opacity="0"
+                style={{
+                  animation: 'calmaRipple 6s ease-out infinite',
+                  animationDelay: '3s',
+                }}
+              />
 
-          {/* Ripple Circle 4 */}
-          <circle
-            className="calma-ripple-circle"
-            cx={currentSize.viewBox / 2}
-            cy={currentSize.viewBox / 2}
-            r={currentSize.viewBox * 0.05}
-            fill="none"
-            stroke={`url(#purple-gradient-1-${size})`}
-            strokeWidth="1.5"
-            opacity="0"
-          />
+              {/* Ripple Circle 4 */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.1}
+                fill="none"
+                stroke="url(#purple-gradient-1)"
+                strokeWidth="1.5"
+                opacity="0"
+                style={{
+                  animation: 'calmaRipple 6s ease-out infinite',
+                  animationDelay: '4.5s',
+                }}
+              />
 
-          {/* Center dot - static with gentle glow */}
-          <circle
-            cx={currentSize.viewBox / 2}
-            cy={currentSize.viewBox / 2}
-            r={currentSize.viewBox * 0.04}
-            fill="#7D6BFF"
-            opacity="0.9"
-            filter={`url(#glow-${size})`}
-          />
+              {/* Center dot - static with gentle glow */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.04}
+                fill="#a78bfa"
+                opacity="0.9"
+                filter="url(#glow)"
+              />
+            </>
+          )}
         </svg>
       </div>
 
       {/* Calma Text */}
-      {showText && <h1 className={`font-bold ${currentSize.text}`}>Calma</h1>}
+      {showText && <h1 className={`${currentSize.text} font-bold`}>Calma</h1>}
+
+      <style jsx>{`
+        @keyframes calmaRipple {
+          0% {
+            r: ${currentSize.viewBox * 0.05}px;
+            opacity: 0.8;
+            stroke-width: 2;
+          }
+          50% {
+            opacity: 0.4;
+            stroke-width: 1.5;
+          }
+          100% {
+            r: ${currentSize.viewBox * 0.45}px;
+            opacity: 0;
+            stroke-width: 1;
+          }
+        }
+
+        @keyframes calmaCenter {
+          0% {
+            opacity: 0.8;
+            transform: scale(1);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1.1);
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          circle[style*='animation'] {
+            animation: none !important;
+          }
+        }
+      `}</style>
     </div>
   )
 }

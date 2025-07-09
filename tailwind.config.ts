@@ -70,9 +70,49 @@ const config: Config = {
           '50%': { opacity: '0.8' },
         },
       },
+      perspective: {
+        '1200': '1200px',
+      },
+      rotate: {
+        'y-10': 'rotateY(10deg)',
+        'y-[-10]': 'rotateY(-10deg)',
+        'y-[-15]': 'rotateY(-15deg)',
+        'x-5': 'rotateX(5deg)',
+        'x-[-5]': 'rotateX(-5deg)',
+      },
     },
   },
-  plugins: [forms, typography],
+  plugins: [
+    forms,
+    typography,
+    function ({
+      addUtilities,
+    }: {
+      addUtilities: (utilities: Record<string, Record<string, string>>) => void
+    }) {
+      const newUtilities = {
+        '.perspective-1200': {
+          perspective: '1200px',
+        },
+        '.rotate-y-10': {
+          transform: 'rotateY(10deg)',
+        },
+        '.rotate-y--10': {
+          transform: 'rotateY(-10deg)',
+        },
+        '.rotate-y--15': {
+          transform: 'rotateY(-15deg)',
+        },
+        '.rotate-x-5': {
+          transform: 'rotateX(5deg)',
+        },
+        '.rotate-x--5': {
+          transform: 'rotateX(-5deg)',
+        },
+      }
+      addUtilities(newUtilities)
+    },
+  ],
 }
 
 export default config
