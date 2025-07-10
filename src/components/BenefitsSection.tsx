@@ -58,11 +58,11 @@ export default function BenefitsSection() {
         <span className="mb-4 block text-[1.125rem] font-semibold tracking-[2px] text-[var(--purple-warm)] uppercase">
           Why Calma
         </span>
-        <h2 className="mb-6 text-[3.5rem] font-extrabold text-[var(--text-primary)]">
+        <h2 className="mb-6 text-[2.5rem] font-extrabold text-[var(--text-primary)] sm:text-[3rem] lg:text-[3.5rem]">
           Built Different Because{' '}
           <span className="gradient-text">You Think Different</span>
         </h2>
-        <p className="text-[1.375rem] leading-relaxed text-[var(--text-secondary)]">
+        <p className="text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl lg:text-[1.375rem]">
           Every feature, every design choice, every word—crafted by people who
           truly understand ADHD.
         </p>

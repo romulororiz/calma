@@ -1,15 +1,15 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import CalmaLogo from './ui/CalmaLogo'
+import HamburgerButton from './ui/HamburgerMenu'
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const mobileMenuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,13 +20,10 @@ export default function Navigation() {
 
       // Show/hide navigation based on scroll direction
       if (currentScrollY < 10) {
-        // Always show at top
         setIsVisible(true)
       } else if (currentScrollY < lastScrollY) {
-        // Scrolling up - show navigation
         setIsVisible(true)
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past 100px - hide navigation
         setIsVisible(false)
       }
 
@@ -70,99 +67,155 @@ export default function Navigation() {
     { href: '#testimonials', label: 'Stories' },
   ]
 
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false)
+  }
+
   return (
-    <nav
-      className={`fixed top-0 z-[1000] w-full transition-all duration-300 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      } ${
-        isScrolled
-          ? 'bg-[rgba(10,10,15,0.95)] py-4 shadow-[0_10px_40px_rgba(139,92,246,0.15)] backdrop-blur-[20px] backdrop-saturate-[180%]'
-          : 'bg-[rgba(10,10,15,0.7)] py-5 backdrop-blur-[20px] backdrop-saturate-[180%]'
-      } border-b border-[var(--glass-border)]`}
-    >
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link href="#home" className="group flex items-center gap-3">
-          <CalmaLogo
-            showText={true}
-            animated={true}
-            className="transition-transform duration-300 group-hover:scale-105"
-          />
-        </Link>
-
-        {/* Desktop Navigation */}
-        <div className="hidden items-center gap-6 md:flex lg:gap-10">
-          {navLinks.map(link => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="relative py-2 font-semibold whitespace-nowrap text-[var(--text-secondary)] transition-colors duration-300 before:absolute before:bottom-[-2px] before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r before:from-[var(--purple-primary)] before:to-[var(--pink-vibrant)] before:transition-all before:duration-300 before:content-[''] hover:text-[var(--text-primary)] hover:before:w-full"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link
-            href="#cta"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-6 py-[0.875rem] font-bold whitespace-nowrap text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-400 hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)] lg:px-9"
-          >
-            <span className="relative z-10">Start Your Journey</span>
-            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+    <>
+      {/* Navigation Bar */}
+      <nav
+        className={`fixed top-0 z-[1000] w-full transition-all duration-300 ${
+          isVisible ? 'translate-y-0' : '-translate-y-full'
+        } ${
+          isMobileMenuOpen
+            ? 'bg-[rgba(10,10,15,0.95)] backdrop-blur-[20px] backdrop-saturate-[180%]'
+            : isScrolled
+              ? 'bg-[rgba(10,10,15,0.95)] backdrop-blur-[20px] backdrop-saturate-[180%]'
+              : 'bg-[rgba(10,10,15,0.7)] backdrop-blur-[20px] backdrop-saturate-[180%]'
+        } ${
+          isMobileMenuOpen
+            ? 'shadow-none'
+            : 'shadow-[0_10px_40px_rgba(139,92,246,0.15)]'
+        } border-b border-[var(--glass-border)]`}
+        style={{
+          backdropFilter: isMobileMenuOpen
+            ? 'blur(20px) saturate(180%)'
+            : undefined,
+        }}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4 lg:px-8">
+          {/* Logo */}
+          <Link href="#home" className="group z-[1001] flex items-center gap-3">
+            <CalmaLogo
+              showText={true}
+              size="sm"
+              className="transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden items-center gap-6 lg:flex xl:gap-8">
+            {navLinks.map(link => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="relative py-2 text-sm font-semibold text-[var(--text-secondary)] transition-colors duration-300 before:absolute before:bottom-[-2px] before:left-0 before:h-[2px] before:w-0 before:bg-gradient-to-r before:from-[var(--purple-primary)] before:to-[var(--pink-vibrant)] before:transition-all before:duration-300 before:content-[''] hover:text-[var(--text-primary)] hover:before:w-full lg:text-base"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="#cta"
+              className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-4 py-2.5 text-sm font-bold text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-400 hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)] lg:px-6 lg:py-3"
+            >
+              <span className="relative z-10">Start Your Journey</span>
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <HamburgerButton
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
         </div>
+      </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="relative z-[1002] text-2xl text-[var(--text-primary)] md:hidden"
-          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isMobileMenuOpen ? '✕' : '☰'}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-[8px] md:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-          aria-label="Close menu overlay"
-        />
-      )}
-
-      {/* Mobile Navigation */}
+      {/* Mobile Menu Overlay - Full Screen */}
       <div
-        ref={mobileMenuRef}
-        className={`fixed top-0 right-0 z-[999] flex h-screen w-[85%] max-w-[320px] flex-col items-center justify-center gap-8 border-l border-[var(--glass-border)] bg-[rgba(10,10,15,0.98)] backdrop-blur-[20px] transition-transform duration-300 md:hidden ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 z-[999] transition-all duration-300 lg:hidden ${
+          isMobileMenuOpen
+            ? 'pointer-events-auto opacity-100'
+            : 'pointer-events-none opacity-0'
         }`}
       >
-        {/* Close button inside menu */}
-        <button
+        {/* Background with blur */}
+        <div
+          className="absolute inset-0 bg-[rgba(10,10,15,0.98)] backdrop-blur-[24px] backdrop-saturate-[180%]"
           onClick={() => setIsMobileMenuOpen(false)}
-          className="absolute top-6 right-6 text-2xl text-[var(--text-primary)] transition-colors duration-300 hover:text-[var(--purple-primary)]"
-          aria-label="Close menu"
-        >
-          ✕
-        </button>
+        />
 
-        {navLinks.map(link => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-center text-xl font-semibold text-[var(--text-secondary)] transition-colors duration-300 hover:text-[var(--text-primary)]"
-          >
-            {link.label}
-          </Link>
-        ))}
-        <Link
-          href="#cta"
-          onClick={() => setIsMobileMenuOpen(false)}
-          className="rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-8 py-[0.875rem] text-center font-bold text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-400 hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)]"
-        >
-          Start Your Journey
-        </Link>
+        {/* Menu Content */}
+        <div className="relative z-10 flex h-full w-full flex-col">
+          {/* Spacer for navigation bar */}
+          <div className="h-[72px] sm:h-[80px]" />
+
+          {/* Menu Items */}
+          <div className="flex flex-1 flex-col items-center justify-center px-8">
+            <div className="w-full max-w-sm space-y-2">
+              {navLinks.map((link, index) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  className={`block w-full rounded-2xl px-6 py-4 text-center text-lg font-semibold text-[var(--text-secondary)] transition-all duration-300 hover:bg-white/5 hover:text-[var(--text-primary)] active:scale-[0.98] ${
+                    isMobileMenuOpen
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen
+                      ? `${index * 50 + 100}ms`
+                      : '0ms',
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* CTA Button */}
+              <div className="pt-4">
+                <Link
+                  href="#cta"
+                  onClick={handleLinkClick}
+                  className={`block w-full rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-6 py-4 text-center text-lg font-bold text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)] active:scale-[0.98] ${
+                    isMobileMenuOpen
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-4 opacity-0'
+                  }`}
+                  style={{
+                    transitionDelay: isMobileMenuOpen
+                      ? `${navLinks.length * 50 + 150}ms`
+                      : '0ms',
+                  }}
+                >
+                  Start Your Journey
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Close hint at bottom */}
+          <div
+            className={`pb-safe-area-inset-bottom px-8 pb-8 text-center transition-all duration-300 ${
+              isMobileMenuOpen
+                ? 'translate-y-0 opacity-100'
+                : 'translate-y-4 opacity-0'
+            }`}
+            style={{
+              transitionDelay: isMobileMenuOpen
+                ? `${navLinks.length * 50 + 200}ms`
+                : '0ms',
+            }}
+          ></div>
+        </div>
       </div>
-    </nav>
+
+      {/* Additional blur overlay for content behind nav when menu is open */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[900] bg-black/20 backdrop-blur-[2px] lg:hidden" />
+      )}
+    </>
   )
 }

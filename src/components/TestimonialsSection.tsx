@@ -59,11 +59,11 @@ export default function TestimonialsSection() {
             : 'translate-y-10 opacity-0'
         }`}
       >
-        <h2 className="mb-6 text-[3.5rem] font-extrabold text-[var(--text-primary)]">
+        <h2 className="mb-6 text-[2.5rem] font-extrabold text-[var(--text-primary)] sm:text-[3rem] lg:text-[3.5rem]">
           Real People, Real{' '}
           <span className="gradient-text">Transformations</span>
         </h2>
-        <p className="text-[1.375rem] leading-relaxed text-[var(--text-secondary)]">
+        <p className="text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl lg:text-[1.375rem]">
           Join thousands who've found their calm and are thriving with ADHD.
         </p>
       </div>

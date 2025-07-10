@@ -18,9 +18,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Calm Mode Toggle */}
       <ModeToggle calmMode={calmMode} setCalmMode={setCalmMode} />
-
       {/* Background Elements - Hidden in calm mode */}
       {!calmMode && (
         <>
@@ -28,7 +26,6 @@ export default function Home() {
           <FloatingParticles />
         </>
       )}
-
       <Navigation />
       <main className={calmMode ? 'calm-mode' : ''}>
         <HeroSection />
