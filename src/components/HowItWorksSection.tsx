@@ -43,7 +43,7 @@ export default function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="relative bg-gradient-to-b from-transparent via-[rgba(139,92,246,0.05)] to-transparent px-8 py-32"
+      className="relative bg-gradient-to-b from-transparent via-[rgba(139,92,246,0.05)] to-transparent px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32"
     >
       <div
         ref={headerRef}
@@ -53,10 +53,10 @@ export default function HowItWorksSection() {
             : 'translate-y-10 opacity-0'
         }`}
       >
-        <h2 className="mb-6 text-[3.5rem] font-extrabold text-[var(--text-primary)]">
+        <h2 className="mb-6 text-[2.5rem] font-extrabold text-[var(--text-primary)] sm:text-[3rem] lg:text-[3.5rem]">
           Your Journey to <span className="gradient-text">Understanding</span>
         </h2>
-        <p className="text-[1.375rem] leading-relaxed text-[var(--text-secondary)]">
+        <p className="text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl lg:text-[1.375rem]">
           Four simple steps to transform how you work with your ADHD, not
           against it.
         </p>
@@ -103,37 +103,37 @@ function StepItem({
     <div
       key={index}
       ref={ref}
-      className={`relative mb-20 grid items-center gap-12 transition-all duration-[800ms] lg:grid-cols-[1fr_auto_1fr] ${
+      className={`relative mb-20 grid items-center gap-12 px-8 transition-all duration-[800ms] lg:grid-cols-[1fr_auto_1fr] ${
         isInView ? 'opacity-100' : 'opacity-0'
-      } ${isInView ? 'lg:translate-y-0' : 'lg:translate-y-10'}`}
+      } ${isInView ? 'translate-y-0' : 'translate-y-10'}`}
     >
       {/* Content - Left on desktop for odd, right for even */}
       <div
         className={`text-center lg:text-right ${isEven ? 'lg:order-1' : 'lg:order-3'}`}
       >
-        <h3 className="mb-6 text-[2.25rem] font-bold text-[var(--text-primary)]">
+        <h3 className="mb-6 text-xl font-bold text-[var(--text-primary)] sm:text-2xl lg:text-[2.25rem]">
           {step.title}
         </h3>
-        <p className="text-[1.25rem] leading-relaxed text-[var(--text-secondary)]">
+        <p className="text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg lg:text-[1.25rem]">
           {step.description}
         </p>
       </div>
 
       {/* Circle Number */}
       <div className="flex justify-center lg:order-2">
-        <div className="relative z-20 flex h-[100px] w-[100px] items-center justify-center rounded-full bg-gradient-to-br from-[var(--purple-primary)] to-[var(--pink-vibrant)] text-[2.5rem] font-extrabold text-white shadow-[0_20px_40px_rgba(139,92,246,0.4)]">
+        <div className="relative z-20 flex h-[80px] w-[80px] items-center justify-center rounded-full bg-gradient-to-br from-[var(--purple-primary)] to-[var(--pink-vibrant)] text-2xl font-extrabold text-white shadow-[0_20px_40px_rgba(139,92,246,0.4)] sm:h-[90px] sm:w-[90px] sm:text-3xl lg:h-[100px] lg:w-[100px] lg:text-[2.5rem]">
           {step.number}
         </div>
       </div>
 
       {/* Visual - Right on desktop for odd, left for even */}
       <div
-        className={`glass-bg relative overflow-hidden rounded-[30px] p-12 text-center shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-500 hover:translate-y-[-5px] hover:scale-[1.02] hover:shadow-[0_25px_50px_rgba(0,0,0,0.3)] ${isEven ? 'lg:order-3' : 'lg:order-1'}`}
+        className={`glass-bg relative overflow-hidden rounded-[20px] p-6 text-center shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-500 hover:translate-y-[-5px] hover:scale-[1.02] hover:shadow-[0_25px_50px_rgba(0,0,0,0.3)] sm:rounded-[25px] sm:p-8 lg:rounded-[30px] lg:p-12 ${isEven ? 'lg:order-3' : 'lg:order-1'}`}
       >
-        <div className="animate-bounce-emoji mb-4 inline-block text-[4rem]">
+        <div className="animate-bounce-emoji mb-4 inline-block text-[2.5rem] sm:text-[3rem] lg:text-[4rem]">
           {step.emoji}
         </div>
-        <p className="font-semibold text-[var(--text-secondary)]">
+        <p className="text-sm font-semibold text-[var(--text-secondary)] sm:text-base">
           {step.tagline}
         </p>
       </div>

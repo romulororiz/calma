@@ -55,11 +55,11 @@ export default function FeaturesSection() {
             : 'translate-y-10 opacity-0'
         }`}
       >
-        <h2 className="mb-6 text-[3.5rem] font-extrabold text-[var(--text-primary)]">
+        <h2 className="mb-6 text-[2.5rem] font-extrabold text-[var(--text-primary)] sm:text-[3rem] lg:text-[3.5rem]">
           Everything Your <span className="gradient-text">ADHD Brain</span>{' '}
           Actually Needs
         </h2>
-        <p className="text-[1.375rem] leading-relaxed text-[var(--text-secondary)]">
+        <p className="text-lg leading-relaxed text-[var(--text-secondary)] sm:text-xl lg:text-[1.375rem]">
           No overwhelming features. No complex systems. Just simple, powerful
           tools that work with how you think.
         </p>

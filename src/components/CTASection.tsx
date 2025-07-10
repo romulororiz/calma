@@ -22,14 +22,14 @@ export default function CTASection() {
           isInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}
       >
-        <h2 className="mb-8 text-[4rem] leading-[1.2] font-extrabold text-[var(--text-primary)]">
+        <h2 className="mb-8 text-[2.5rem] leading-[1.2] font-extrabold text-[var(--text-primary)] sm:text-[3rem] lg:text-[4rem]">
           Ready to{' '}
           <span className="gradient-text animate-gradient-shift block">
             Embrace Your Beautiful Mind?
           </span>
         </h2>
 
-        <p className="mb-12 text-[1.625rem] leading-[1.6] text-[var(--text-secondary)]">
+        <p className="mb-12 text-lg leading-[1.6] text-[var(--text-secondary)] sm:text-xl lg:text-[1.625rem]">
           Join thousands finding peace, building sustainable habits, and
           thriving with ADHD. Your journey to self-understanding and acceptance
           starts here.
@@ -58,10 +58,10 @@ export default function CTASection() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="flex flex-col justify-center gap-4 sm:flex-row sm:gap-6">
           <Link
             href="#"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-9 py-[0.875rem] font-bold text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-400 hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)]"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-6 py-[0.875rem] text-center font-bold whitespace-nowrap text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-400 hover:translate-y-[-3px] hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)] sm:px-9"
           >
             <span className="relative z-10">Start Your Free Journey</span>
             <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
@@ -69,7 +69,7 @@ export default function CTASection() {
 
           <Link
             href="#"
-            className="glass-bg relative overflow-hidden rounded-full px-9 py-[0.875rem] font-bold text-[var(--text-primary)] transition-all duration-400 hover:translate-y-[-2px] hover:border-[var(--purple-primary)] hover:bg-[rgba(139,92,246,0.1)] hover:shadow-[0_10px_30px_rgba(139,92,246,0.2)]"
+            className="glass-bg relative overflow-hidden rounded-full px-6 py-[0.875rem] text-center font-bold whitespace-nowrap text-[var(--text-primary)] transition-all duration-400 hover:translate-y-[-2px] hover:border-[var(--purple-primary)] hover:bg-[rgba(139,92,246,0.1)] hover:shadow-[0_10px_30px_rgba(139,92,246,0.2)] sm:px-9"
           >
             Questions? Chat With Us
           </Link>
