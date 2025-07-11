@@ -97,7 +97,7 @@ export default function CalmaLogo({
             </linearGradient>
           </defs>
 
-          {animated && (
+          {animated ? (
             <>
               {/* Background glow */}
               <circle
@@ -175,6 +175,67 @@ export default function CalmaLogo({
                 r={currentSize.viewBox * 0.04}
                 fill="#a78bfa"
                 opacity="0.9"
+                filter="url(#glow)"
+              />
+            </>
+          ) : (
+            <>
+              {/* Static Professional Ripples */}
+              {/* Outermost static circle */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.42}
+                fill="none"
+                stroke="url(#purple-gradient-1)"
+                strokeWidth="1"
+                opacity="0.2"
+                filter="url(#glow)"
+              />
+
+              {/* Second static circle */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.32}
+                fill="none"
+                stroke="url(#purple-gradient-2)"
+                strokeWidth="1.2"
+                opacity="0.35"
+                filter="url(#glow)"
+              />
+
+              {/* Third static circle */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.22}
+                fill="none"
+                stroke="url(#purple-gradient-3)"
+                strokeWidth="1.5"
+                opacity="0.5"
+                filter="url(#glow)"
+              />
+
+              {/* Inner static circle */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.12}
+                fill="none"
+                stroke="url(#purple-gradient-1)"
+                strokeWidth="1.8"
+                opacity="0.7"
+                filter="url(#glow)"
+              />
+
+              {/* Center dot - same as animated version */}
+              <circle
+                cx={currentSize.viewBox / 2}
+                cy={currentSize.viewBox / 2}
+                r={currentSize.viewBox * 0.04}
+                fill="#a78bfa"
+                opacity="0.95"
                 filter="url(#glow)"
               />
             </>
