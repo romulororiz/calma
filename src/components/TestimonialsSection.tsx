@@ -82,13 +82,12 @@ export default function TestimonialsSection() {
           <div className="gradient-text absolute top-8 left-12 font-serif text-[10rem] opacity-30 select-none">
             "
           </div>
-
-          <p className="relative z-10 mb-8 text-center text-[2.25rem] leading-[1.7] font-medium text-[var(--text-primary)]">
+          <p className="relative z-10 mb-8 text-center text-[1.55rem] leading-[1.7] font-medium text-[var(--text-primary)] md:text-[2rem]">
             {featuredTestimonial.quote}
           </p>
 
           <div className="flex items-center justify-center gap-6">
-            <div className="relative flex h-[60px] w-[60px] items-center justify-center rounded-full bg-gradient-to-br from-[var(--purple-primary)] to-[var(--pink-vibrant)] text-[1.25rem] font-bold text-white shadow-[0_10px_25px_rgba(139,92,246,0.3)]">
+            <div className="relative flex h-[50px] w-[70px] items-center justify-center rounded-full bg-gradient-to-br from-[var(--purple-primary)] to-[var(--pink-vibrant)] text-[1.25rem] font-bold text-white shadow-[0_10px_25px_rgba(139,92,246,0.3)] sm:h-[60px] sm:w-[60px]">
               {featuredTestimonial.avatar}
               <div className="absolute right-0 bottom-0 h-[18px] w-[18px] rounded-full border-[3px] border-[var(--bg-primary)] bg-[var(--green-fresh)]" />
             </div>

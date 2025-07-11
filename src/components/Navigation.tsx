@@ -99,8 +99,8 @@ export default function Navigation() {
           <Link href="#home" className="group z-[1001] flex items-center gap-3">
             <CalmaLogo
               showText={true}
-              size="sm"
-              className="transition-transform duration-300 group-hover:scale-105"
+              size="lg"
+              className="ml-[-20px] transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -179,7 +179,7 @@ export default function Navigation() {
                 <Link
                   href="#cta"
                   onClick={handleLinkClick}
-                  className={`block w-full rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-6 py-4 text-center text-lg font-bold text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)] active:scale-[0.98] ${
+                  className={`text-md mx-auto block w-full max-w-[250px] rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] px-6 py-4 text-center font-bold text-white shadow-[0_10px_30px_rgba(139,92,246,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_15px_40px_rgba(236,72,153,0.4)] active:scale-[0.98] ${
                     isMobileMenuOpen
                       ? 'translate-y-0 opacity-100'
                       : 'translate-y-4 opacity-0'

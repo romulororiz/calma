@@ -102,7 +102,7 @@ export default function PhoneMockup() {
             <div
               className="glass-bg animate-float-element absolute top-[8%] right-[5%] flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-xs font-semibold text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out"
               style={{
-                animationDelay: '2s',
+                animationDelay: '1s',
                 transform: getPillTransform(20, 56, 0.8), // right 5% = 280px approx, 8% of 700px = 56px
               }}
             >
@@ -112,7 +112,7 @@ export default function PhoneMockup() {
             <div
               className="glass-bg animate-float-element absolute top-[15%] left-[8%] flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-xs font-semibold text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out"
               style={{
-                animationDelay: '4s',
+                animationDelay: '2s',
                 transform: getPillTransform(28, 105, 1.5), // 8% of 350px = 28px, 15% of 700px = 105px
               }}
             >
@@ -123,7 +123,7 @@ export default function PhoneMockup() {
             <div
               className="glass-bg animate-float-element absolute top-[28%] right-[3%] flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-xs font-semibold text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out"
               style={{
-                animationDelay: '6s',
+                animationDelay: '3s',
                 transform: getPillTransform(20, 245, 1.0), // right 3% = 290px approx, 35% of 700px = 245px
               }}
             >
@@ -133,7 +133,7 @@ export default function PhoneMockup() {
             <div
               className="glass-bg animate-float-element absolute top-[30%] left-[3%] flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-xs font-semibold text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out"
               style={{
-                animationDelay: '8s',
+                animationDelay: '4s',
                 transform: getPillTransform(10.5, 280, 1.3), // 3% of 350px = 10.5px, 40% of 700px = 280px
               }}
             >
@@ -144,7 +144,7 @@ export default function PhoneMockup() {
             <div
               className="glass-bg animate-float-element absolute right-[5%] bottom-[25%] flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-xs font-semibold text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out"
               style={{
-                animationDelay: '10s',
+                animationDelay: '5s',
                 transform: getPillTransform(20, 525, 0.9), // right 5% = 280px approx, bottom 25% = 525px from top
               }}
             >
@@ -154,7 +154,7 @@ export default function PhoneMockup() {
             <div
               className="glass-bg animate-float-element absolute bottom-[20%] left-[8%] flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-xs font-semibold text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out"
               style={{
-                animationDelay: '12s',
+                animationDelay: '6s',
                 transform: getPillTransform(28, 560, 1.1), // 8% of 350px = 28px, bottom 20% = 560px from top
               }}
             >
@@ -164,7 +164,7 @@ export default function PhoneMockup() {
             <div
               className="glass-bg animate-float-element absolute right-[25%] bottom-[15%] flex items-center gap-2 rounded-[20px] px-3 py-1.5 text-xs font-semibold text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] transition-transform duration-300 ease-out"
               style={{
-                animationDelay: '14s',
+                animationDelay: '7s',
                 transform: getPillTransform(175, 595, 1.4), // right 25% = 175px approx, bottom 15% = 595px from top
               }}
             >
