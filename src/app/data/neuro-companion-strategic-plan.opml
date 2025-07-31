@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>NeuroAnchor Strategic Plan</title>
+  </head>
+  <body>
+    <outline text="Vision">
+      <outline text="Empower individuals with ADHD through personalized digital support, leveraging AI and wearable data."/>
+    </outline>
+    <outline text="Goals">
+      <outline text="Deliver an MVP for web and mobile"/>
+      <outline text="Integrate AI-driven personalization"/>
+      <outline text="Incorporate wearable data for holistic insights"/>
+      <outline text="Ensure accessibility and inclusivity"/>
+    </outline>
+    <outline text="User Personas">
+      <outline text="Young adults with ADHD"/>
+      <outline text="Parents of children with ADHD"/>
+      <outline text="Professionals seeking productivity tools"/>
+    </outline>
+    <outline text="Core Features">
+      <outline text="Authentication (OAuth, email/password)"/>
+      <outline text="Personalized dashboard"/>
+      <outline text="Task and habit tracking"/>
+      <outline text="AI-driven suggestions"/>
+      <outline text="Wearable data integration"/>
+      <outline text="Notifications and reminders"/>
+      <outline text="Accessibility features"/>
+    </outline>
+    <outline text="Technical Stack">
+      <outline text="Monorepo: TurboRepo, pnpm"/>
+      <outline text="Web: Next.js, Tailwind, shadcn/ui"/>
+      <outline text="Mobile: React Native"/>
+      <outline text="Backend: Node.js, PostgreSQL"/>
+      <outline text="AI: OpenAI API, custom models"/>
+      <outline text="Wearables: Apple Health, Google Fit APIs"/>
+    </outline>
+    <outline text="Milestones">
+      <outline text="MVP design and wireframes"/>
+      <outline text="Monorepo and CI/CD setup"/>
+      <outline text="Backend and API development"/>
+      <outline text="Web and mobile MVPs"/>
+      <outline text="AI and wearable integration"/>
+      <outline text="Beta launch and feedback"/>
+    </outline>
+  </body>
+</opml> 

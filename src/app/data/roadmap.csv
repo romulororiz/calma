@@ -1,0 +1,24 @@
+Category,Task,Status,Priority,Notes
+Design,Define visual identity,To Do,High,Logo, color palette, typography
+Design,Create wireframes for web/mobile,To Do,High,Login, dashboard, onboarding
+Infrastructure,Set up monorepo (TurboRepo, pnpm),Done,High,Modern stack
+Infrastructure,Configure CI/CD,To Do,Medium,GitHub Actions/Vercel
+Backend,Design database schema,To Do,High,User, tasks, wearable data
+Backend,Implement authentication API,To Do,High,OAuth, email/password
+Backend,Integrate AI engine,To Do,Medium,Personalization logic
+Backend,Set up wearable data ingestion,To Do,Medium,Apple/Google Fit, APIs
+Web,Initialize Next.js app,Done,High,Base project
+Web,Implement login page,To Do,High,Wireframe-based
+Web,Create dashboard,To Do,High,User tasks, stats
+Web,Add accessibility features,To Do,Medium,WCAG compliance
+Web,Integrate AI suggestions,To Do,Medium,Personalized tips
+Web,Connect to wearable data,To Do,Medium,Show activity stats
+Web,Implement notifications,To Do,Low,Reminders
+Mobile,Initialize React Native app,To Do,High,Base project
+Mobile,Implement login/onboarding,To Do,High,Wireframe-based
+Mobile,Sync with backend,To Do,High,API integration
+Mobile,Display wearable data,To Do,Medium,Charts, stats
+Mobile,Push notifications,To Do,Medium,Reminders
+Launch,Prepare beta release,To Do,High,TestFlight/Play Store
+Launch,Collect user feedback,To Do,High,Surveys, analytics
+Launch,Iterate on feedback,To Do,High,Continuous improvement 
