@@ -93,7 +93,7 @@ export default function BenefitsSection() {
             key={index}
             className={`glass-bg group relative cursor-pointer overflow-hidden rounded-3xl p-10 transition-all duration-400 ${
               benefit.featured  
-                ? 'bg-gradient-to-br from-[rgba(139,92,246,0.1)] to-[rgba(236,72,153,0.1)] md:col-span-2 lg:col-span-2 lg:row-span-2'
+                ? 'place-content-center bg-gradient-to-br from-[rgba(139,92,246,0.1)] to-[rgba(236,72,153,0.1)] md:col-span-2 lg:col-span-2 lg:row-span-2'
                 : ''
             } hover:translate-y-[-10px] hover:scale-[1.02] hover:border-[var(--purple-soft)] hover:shadow-[0_25px_50px_rgba(139,92,246,0.2)]`}
             style={{ transitionDelay: `${index * 100}ms` }}
@@ -101,7 +101,7 @@ export default function BenefitsSection() {
             {/* Hover glow effect */}
             <div className="absolute -top-1/2 -left-1/2 h-[200%] w-[200%] rotate-45 bg-[radial-gradient(circle,var(--glow-soft)_0%,transparent_70%)] opacity-0 transition-opacity duration-400 group-hover:opacity-50" />
 
-            <div className={`${isMobile ? 'flex items-center justify-start' : ''}`}>
+            <div className={`${isMobile ? 'flex items-center justify-start' : 'flex items-center justify-start'}`}>
             <div
               className={`${
                 benefit.featured && !isMobile ? 'h-[70px] w-[70px]' : 'p-4'

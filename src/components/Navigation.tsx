@@ -134,8 +134,8 @@ export default function Navigation() {
           <Link href="#home" className="group z-[1001] flex items-center gap-3">
             <CalmaLogo
               showText={true}
-              size={isMobile ? 'md' : 'lg'}
-              className="ml-[-20px] transition-transform duration-300 group-hover:scale-105"
+              size={isMobile ? 'md' : 'xl'}
+              className="ml-[-20px] transition-transform duration-300 group-hover:scale-105 hover:scale-none"
             />
           </Link>
 

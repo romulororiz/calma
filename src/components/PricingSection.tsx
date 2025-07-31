@@ -156,7 +156,7 @@ export default function PricingSection() {
         </h3>
         {tier.popular && (
             <div className="mb-2 text-center">
-                <span className="rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] py-2 px-4 text-xs font-bold text-white shadow-[0_8px_16px_rgba(139,92,246,0.4)] border border-white/20">
+                <span className="rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] py-2 px-4 text-xs font-bold text-white shadow-[0_8px_16px_rgba(139,92,246,0.4)]">
                 ⭐ Most Popular
                 </span>
             </div>
@@ -246,12 +246,21 @@ export default function PricingSection() {
           </p>
 
           {/* Billing Toggle */}
-          <div className="mx-auto mb-12 flex max-w-[300px] items-center justify-center rounded-full glass-bg p-1">
+          <div className="mx-auto mb-12 flex max-w-[300px] items-center justify-between rounded-full glass-bg p-1 relative">
+            {/* Animated Background Slider */}
+            <div 
+              className={`absolute top-1 bottom-1 rounded-full bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] transition-all duration-500 ease-out ${
+                billingCycle === 'monthly' 
+                  ? 'left-1 w-[120px]' 
+                  : 'left-[121px] w-[173px]'
+              }`}
+            />
+            
             <button
               onClick={() => setBillingCycle('monthly')}
-              className={`rounded-full px-6 py-2 text-sm font-semibold transition-all duration-300 ${
+              className={`ml-2 relative z-10 cursor-pointer rounded-full px-6 py-2 text-sm font-semibold transition-all duration-300 ${
                 billingCycle === 'monthly'
-                  ? 'bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] text-white shadow-[0_4px_12px_rgba(139,92,246,0.3)]'
+                  ? 'text-white'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
@@ -259,9 +268,9 @@ export default function PricingSection() {
             </button>
             <button
               onClick={() => setBillingCycle('yearly')}
-              className={`rounded-full px-6 py-2 text-sm font-semibold transition-all duration-300 ${
+              className={`ml-4 relative z-10 cursor-pointer rounded-full px-6 py-2 text-sm font-semibold transition-all duration-300 ${
                 billingCycle === 'yearly'
-                  ? 'bg-gradient-to-r from-[var(--purple-primary)] to-[var(--pink-vibrant)] text-white shadow-[0_4px_12px_rgba(139,92,246,0.3)]'
+                  ? 'text-white'
                   : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
@@ -335,7 +344,7 @@ export default function PricingSection() {
         )}
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <p className="mb-6 text-lg text-[var(--text-secondary)]">
             All plans include our core ADHD support features
           </p>
@@ -346,7 +355,7 @@ export default function PricingSection() {
             Questions? Chat with our team
             <span className="text-[var(--purple-primary)]">→</span>
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )
